@@ -21,6 +21,7 @@ public class SampleController {
 	
 	@RequestMapping("/todofuken/list")
 	public ResponseEntity<ResponseDto> todofukenList() {
+		log.info("request /todofuken/list");
 		ResponseDto response = new ResponseDto();
 		
 		try {
@@ -36,6 +37,7 @@ public class SampleController {
 			response.setProcess(new Date());
 		}
 		
+		log.info("response /todofuken/list {}", response);
 		return new ResponseEntity<ResponseDto>(response, HttpStatusCode.valueOf(response.getResultCode()));
 	}
 }
